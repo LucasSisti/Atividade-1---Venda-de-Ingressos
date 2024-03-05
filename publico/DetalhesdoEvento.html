@@ -1,4 +1,3 @@
-<!-- eventoDetalhes.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,14 +29,12 @@
 </div>
 <script src= "/index.js"></script>
 <script>
-    function calcularPrecoTotal() {
-      
-      const precoIngresso = 50; 
+     function calcularPrecoTotal() {
+      const precoIngressoElement = document.getElementById("precoIngresso");
+      const precoIngresso = precoIngressoElement ? parseFloat(precoIngressoElement.textContent.replace('R$ ', '')) : 50;
       const quantidadeIngressos = document.getElementById("quantidadeIngressos").value;
-    
-        const precoTotal = precoIngresso * quantidadeIngressos;
-  
-        alert("Preço Total: R$ " + precoTotal.toFixed(2));
+      const precoTotal = precoIngresso * quantidadeIngressos;
+      alert("Preço Total: R$ " + precoTotal.toFixed(2));
     }
   </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
