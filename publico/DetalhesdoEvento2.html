@@ -31,14 +31,12 @@
 
 <script>
     function calcularPrecoTotal() {
-      const precoIngresso = 40; 
+      const precoIngressoElement = document.getElementById("precoIngresso");
+      const precoIngresso = precoIngressoElement ? parseFloat(precoIngressoElement.textContent.replace('R$ ', '')) : 50;
       const quantidadeIngressos = document.getElementById("quantidadeIngressos").value;
       const precoTotal = precoIngresso * quantidadeIngressos;
       alert("Preço Total: R$ " + precoTotal.toFixed(2));
     }
-
-    // Adicionando evento de clique ao botão
-    document.getElementById("btnComprarIngressos").addEventListener("click", calcularPrecoTotal);
 </script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
